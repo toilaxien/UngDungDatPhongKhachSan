@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng Dẫn Sử Dụng - Khách Sạn Lux</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #FFFFFF;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #228B22, #32CD32);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+            animation: pulse 10s infinite;
+            z-index: 0;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        /* Content */
+        .content {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background: url('https://www.transparenttextures.com/patterns/rice-paper.png');
+            background-color: #f9f9f9;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .content h2 {
+            color: #228B22;
+            border-bottom: 3px solid #228B22;
+            padding-bottom: 10px;
+            margin-top: 0;
+            font-size: 2em;
+            position: relative;
+        }
+        .content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #32CD32;
+            transition: width 0.3s ease;
+        }
+        .content h2:hover::after {
+            width: 100px;
+        }
+        .content h3 {
+            color: #228B22;
+            margin-top: 25px;
+            font-size: 1.5em;
+        }
+        .content h4 {
+            color: #2E8B57;
+            margin-top: 20px;
+            font-size: 1.3em;
+        }
+        .content h5 {
+            color: #3CB371;
+            margin-top: 15px;
+            font-size: 1.2em;
+        }
+        .content ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        .content ul li {
+            position: relative;
+            padding-left: 30px;
+            margin: 15px 0;
+        }
+        .content ul li:before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: #228B22;
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+        /* Collapsible Sections */
+        .collapsible {
+            background-color: #228B22;
+            color: white;
+            cursor: pointer;
+            padding: 12px 15px;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1.2em;
+            border-radius: 8px;
+            width: 100%;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+        .collapsible:hover {
+            background-color: #32CD32;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .content-section {
+            display: none;
+            padding: 15px;
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            margin: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            animation: fadeIn 0.5s ease;
+        }
+        .active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content {
+                margin: 20px;
+                padding: 20px;
+            }
+            .header h1 {
+                font-size: 2em;
+            }
+            .collapsible {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Chương Trình Quản Lý Hoạt Động - Khách Sạn Lux</h1>
+    </div>
+
+    <div class="content">
+        <h2>1. Giới Thiệu Ứng Dụng</h2>
+        <p><i class="fas fa-hotel"></i> <strong>Hệ thống Quản lý hoạt động khách sạn Lux</strong> được thiết kế để hỗ trợ các khách sạn quản lý toàn bộ quy trình đặt phòng một cách hiệu quả, từ việc tiếp nhận đặt phòng, quản lý thông tin khách hàng, đến xử lý thanh toán và các hoạt động liên quan. Hệ thống giúp giảm thiểu sai sót thủ công, tăng tốc độ phục vụ khách hàng và nâng cao chất lượng dịch vụ.</p>
+        <p>Với giao diện thân thiện và tính năng dễ sử dụng, Hệ thống kỳ vọng sẽ giúp khách sạn Lux tiết kiệm thời gian và chi phí quản lý, cải thiện trải nghiệm khách hàng với quy trình nhanh gọn, minh bạch.</p>
+
+        <button class="collapsible" onclick="toggleSection('cau-hinh-section')">2. Cấu Hình Phần Cứng - Phần Mềm</button>
+        <div id="cau-hinh-section" class="content-section">
+            <h3>2.1 Phần Cứng</h3>
+            <ul>
+                <li>CPU: Tối thiểu Intel Core i5 hoặc tương đương</li>
+                <li>RAM: Tối thiểu 8GB</li>
+                <li>Ổ cứng: SSD tối thiểu 256GB</li>
+                <li>Kết nối mạng: Tốc độ tối thiểu 1Gbps</li>
+            </ul>
+            <h3>2.2 Phần Mềm</h3>
+            <ul>
+                <li>Hệ điều hành: Tối thiểu Windows 10/11 hoặc macOS</li>
+                <li>Cơ sở dữ liệu: MySQL, Microsoft SQL Server</li>
+                <li>Eclipse IDE for Java EE Developers 12.0 trở lên</li>
+                <li>Java Development Kit 8 trở lên</li>
+            </ul>
+        </div>
+
+        <button class="collapsible" onclick="toggleSection('chuc-nang-section')">3. Các Chức Năng Chính</button>
+        <div id="chuc-nang-section" class="content-section">
+            <h3>3.1 Chức Năng của Lễ Tân</h3>
+
+            <h4>Chức Năng Quản Lý Đặt Phòng</h4>
+            <h5><i class="fas fa-bed"></i> Chức Năng Đặt Phòng</h5>
+            <p>Sơ đồ phòng thể hiện số phòng đang lưu trú tại khách sạn. Tại đây thể hiện tất cả tình trạng phòng: đang ở, đang sửa chữa, trống.</p>
+            <p>Để đặt phòng, nhân viên lễ tân cần làm theo các bước:</p>
+            <ul>
+                <li>Bước 1: Chọn chức năng “Đặt phòng” trong giao diện quản lý đặt phòng.</li>
+                <li>Bước 2: Chọn loại đơn đặt phòng theo yêu cầu của khách hàng: “Theo giờ”, “Theo ngày”, “Theo đêm”.</li>
+                <li>Bước 3: Click chuột vào ô ngày nhận phòng và sau đó là ngày trả phòng để chọn ngày nhận phòng và ngày trả phòng. <br><em>Lưu ý: Với trường hợp loại đơn đặt phòng là đơn theo giờ thì chọn thêm số giờ.</em></li>
+                <li>Bước 4: Nhấn vào dấu “+” để cập nhật số lượng khách.</li>
+                <li>Bước 5: Chọn kiểu đặt. Nếu là khách hàng đặt phòng trực tiếp tại khách sạn thì chọn “Trực tiếp”; nếu khách hàng đặt phòng qua số điện thoại thì chọn kiểu đặt “Trực tiếp”.</li>
+                <li>Bước 6: Chọn checkbox lọc phòng theo yêu cầu của khách hàng.</li>
+                <li>Bước 7: Tại cột số lượng, tăng số lượng loại phòng tùy theo số lượng khách đến ở.</li>
+                <li>Bước 8: Nhấn nút xác nhận để thực hiện chọn phòng phù hợp.</li>
+                <li>Bước 9: Tại cột “Phòng”, chọn số phòng phù hợp. Sau đó nhấn xác nhận để nhập thông tin khách hàng.</li>
+                <li>Bước 10: Nhập thông tin khách hàng phù hợp. <br><em>Lưu ý: Ở bước nhập thông tin khách hàng, nếu khách hàng đã có đặt phòng trước đó thì hệ thống sẽ tự cập nhật thông tin phù hợp.</em></li>
+                <li>Bước 11: Chọn dịch vụ theo mong muốn của khách hàng (hoặc không). Nhấn “Xác nhận đặt phòng” và hoàn tất quy trình đặt phòng.</li>
+            </ul>
+
+            <h5><i class="fas fa-calendar-check"></i> Chức Năng Xử Lý Đơn Đặt Trước</h5>
+            <ul>
+                <li>Bước 1: Chọn chức năng xử lý đơn đặt trước ở màn hình quản lý đặt phòng.</li>
+                <li>Bước 2: Chọn ô đơn tạm thời để nhận phòng hoặc hủy đơn.</li>
+            </ul>
+
+            <h5><i class="fas fa-sign-out-alt"></i> Chức Năng Trả Phòng</h5>
+            <ul>
+                <li>Bước 1: Chọn chức năng “Trả phòng” trong giao diện quản lý đặt phòng.</li>
+                <li>Bước 2:
+                    <ul>
+                        <li>2.1: Khách hàng nhớ mã phòng thì chọn hoặc nhập mã phòng khách ở.</li>
+                        <li>2.2: Khách hàng quên mã phòng thì nhập số điện thoại và tên khách hàng để load đơn đặt phòng của khách, sau đó chọn đơn đặt phòng có mã phòng phù hợp.</li>
+                    </ul>
+                </li>
+                <li>Bước 3: Tại bảng chọn phòng muốn trả, chọn phòng mà khách muốn trả. Có thể chọn checkbox ở header để chọn tất cả các phòng. <br><em>Lưu ý: Trước khi thực hiện bước 3, nhân viên cần xác nhận lại số tiền sử dụng dịch vụ của khách hàng và đọc sơ lược dịch vụ mà khách hàng đã sử dụng.</em>
+                    <br>Có thể bấm nút để xem chi tiết loại dịch vụ mà khách đã sử dụng.
+                    <br>Hoặc nhấn nút để xóa đi dịch vụ đó nếu nó không phù hợp với khách hàng. <em>Chú ý: Nếu xóa dịch vụ thì cần xác nhận rõ với khách trước khi xóa.</em>
+                </li>
+                <li>Bước 4: Tại bảng chi phí phát sinh, chọn dòng có mã phòng phù hợp để cập nhật chi phí phát sinh nếu có.</li>
+                <li>Bước 5: Nhấn tiếp tục để thực hiện bước thanh toán.</li>
+                <li>Bước 6: Chọn hình thức thanh toán phù hợp với yêu cầu của khách:
+                    <ul>
+                        <li>6.1: Nếu khách yêu cầu thanh toán qua tiền mặt thì tick vào radio tiền mặt và nhập số tiền khách đưa để sinh ra tiền thối lại cho khách. <br><em>Lưu ý: Ở bước này, có thể chọn số tiền gợi ý để nhập nhanh.</em></li>
+                        <li>6.2: Nếu khách yêu cầu chuyển khoản thì tick vào radio chuyển khoản, tự động chương trình sẽ in ra QR code để khách hàng có thể quét chuyển khoản.</li>
+                    </ul>
+                </li>
+                <li>Bước 7: Nhấn nút “Thanh toán”, chuyển sang bước in hóa đơn. Sau khi chương trình tự động mở file PDF, nhân viên có thể nhấn nút in để in hóa đơn.</li>
+                <li>Bước 8: Tắt file PDF và nhấn vào nút “OK” trong thông báo thanh toán thành công để trở về giao diện “Quản lý đặt phòng” hoặc “No” để thanh toán lại nếu có sai sót. Hoàn tất quy trình trả phòng.</li>
+            </ul>
+
+            <h5><i class="fas fa-exchange-alt"></i> Chức Năng Đổi Phòng</h5>
+            <ul>
+                <li>Bước 1: Tại giao diện quản lý đặt phòng, chọn chức năng đổi phòng.</li>
+                <li>Bước 2: Trong bảng danh sách phòng đang ở, chọn nút đổi phòng ở dòng có mã phòng phù hợp.</li>
+                <li>Bước 3: Nhập thông tin phù hợp theo yêu cầu của khách hàng và nhấn “Xác nhận đổi phòng” để hoàn thành quy trình.</li>
+            </ul>
+
+            <h5><i class="fas fa-concierge-bell"></i> Chức Năng Quản Lý Đặt Dịch Vụ</h5>
+            <ul>
+                <li>Bước 1: Tại màn hình chính, chọn chức năng quản lý đặt dịch vụ.</li>
+                <li>Bước 2: Tại khung chọn phòng để đặt dịch vụ, chọn phòng theo yêu cầu của khách hàng và ấn “Xác nhận”. Thông tin phiếu dịch vụ sẽ được hiển thị ở khung bên phải.</li>
+                <li>Bước 3: Chọn dịch vụ theo từng loại dịch vụ mà khách hàng yêu cầu.</li>
+                <li>Bước 4: Nhấn xác nhận để hoàn tất việc đặt dịch vụ.</li>
+            </ul>
+
+            <h5><i class="fas fa-users"></i> Chức Năng Quản Lý Khách Hàng</h5>
+            <ul>
+                <li>Bước 1: Tại màn hình chính, chọn chức năng quản lý khách hàng.</li>
+                <li>Bước 2: Tại danh sách khách hàng, chọn khách hàng muốn chỉnh sửa thông tin.</li>
+                <li>Bước 3: Chọn cập nhật để thay đổi thông tin khách hàng.</li>
+            </ul>
+
+            <h3>3.2 Chức Năng của Quản Lý</h3>
+            <h4><i class="fas fa-user-tie"></i> Quản Lý Nhân Viên</h4>
+            <ul>
+                <li>Bước 1: Tại giao diện chính của quản lý, chọn chức năng quản lý nhân viên.</li>
+                <li>Bước 2: Thêm thông tin nhân viên phù hợp và ấn xác nhận.</li>
+            </ul>
+
+            <h4><i class="fas fa-concierge-bell"></i> Quản Lý Dịch Vụ</h4>
+            <ul>
+                <li>Bước 1: Tại giao diện chính của quản lý, chọn chức năng quản lý dịch vụ.</li>
+                <li>Bước 2: Nhập thông tin và chọn nút chức năng phù hợp.</li>
+            </ul>
+
+            <h4><i class="fas fa-door-open"></i> Quản Lý Phòng</h4>
+            <ul>
+                <li>Bước 1: Chọn chức năng quản lý phòng.</li>
+                <li>Bước 2: Nhập thông tin và chọn nút chức năng phù hợp.</li>
+            </ul>
+
+            <h4><i class="fas fa-tag"></i> Quản Lý Khuyến Mãi</h4>
+            <ul>
+                <li>Bước 1: Chọn chức năng quản lý khuyến mãi.</li>
+                <li>Bước 2: Nhập thông tin để nhập khuyến mãi hoặc chọn button ở cột dừng khuyến mãi để dừng chương trình.</li>
+            </ul>
+
+            <h4><i class="fas fa-chart-line"></i> Thống Kê Doanh Thu</h4>
+            <ul>
+                <li>Bước 1: Chọn chức năng thống kê doanh thu.</li>
+                <li>Bước 2: Chọn ngày tháng năm và chọn ngày để xem thống kê.</li>
+            </ul>
+        </div>
+
+        <button class="collapsible" onclick="toggleSection('chuc-nang-chung-section')">4. Chức Năng Chung</button>
+        <div id="chuc-nang-chung-section" class="content-section">
+            <h3>4.1 Quên Mật Khẩu</h3>
+            <ul>
+                <li>Bước 1: Chọn chức năng quên mật khẩu ở cửa sổ đăng nhập.</li>
+                <li>Bước 2: Nhập thông tin phù hợp để xác nhận tài khoản.</li>
+                <li>Bước 3: Nhập mật khẩu mới và ấn xác nhận.</li>
+            </ul>
+
+
+        </div>
+    </div>
+
+    <script>
+        function toggleSection(id) {
+            var section = document.getElementById(id);
+            section.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
